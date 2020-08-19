@@ -2,8 +2,10 @@
 #include "castSpells.h"
 
 int main() {
-    float f { 123.25 };
+    float d = 123.25;
 
-    std::cout << castFloatToInt(f);
+    std::cout << castFloatToInt(d)
+              << ' ' << typeid(d).name()
+              << ' ' << typeid(castFloatToInt(d)).name();
     return 0;
 }

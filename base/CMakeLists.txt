@@ -5,7 +5,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED on)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -Wall -Wextra -Werror -Wpedantic")
 
-set(SOURCE main_list_template.cpp)
+set(SOURCE main_cin_cout.cpp)
 set(HEADER linked_list.h)
 
 add_executable(${PROJECT_NAME} ${SOURCE})

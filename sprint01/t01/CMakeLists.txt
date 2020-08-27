@@ -1,11 +1,15 @@
 cmake_minimum_required(VERSION 3.18.1)
-project(main LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED on)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -Wall -Wextra -Werror -Wpedantic")
 
-set(SOURCE main.cpp)
-set(HEADER linked_list.h)
+project(moveAlong LANGUAGES CXX)
+
+include_directories(src/)
+
+file(GLOB CPPS "src/*.cpp" "main.cpp")
+set(SOURCE main.cpp src/f.cpp)
+set(HEADER src/header.h)
 
 add_executable(${PROJECT_NAME} ${SOURCE})

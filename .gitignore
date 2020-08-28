@@ -7,5 +7,4 @@
 .vscode
 
 *tmp*
-*exec
-*bin
+*build*

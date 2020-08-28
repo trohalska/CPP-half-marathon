@@ -11,7 +11,8 @@ int main(int argc, char *argv[]) {
             printjorney(res);
             break;
         } else {
-            replasetowns(res);
+            std::rotate(res.begin(), res.begin() + 1, res.end());  // check
+            // replasetowns(res);
         }
     }
     if (i == res.size())

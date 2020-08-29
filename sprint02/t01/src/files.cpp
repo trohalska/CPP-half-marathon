@@ -37,14 +37,9 @@ void setToModFile(std::string fname, const std::multiset<std::string>& f) {
     while (x != f.end()) {
         std::string w = *x;
         int count = 1;
-        for (auto y = ++x; y != f.end(); ++y) {
-            if (w == *y)
-                count++;
-            else
-                break;
-        }
+        ++x;
+        for (; w == *x; ++x)
+            count++;
         fout << w << ": " << count << std::endl;
-        for (; count > 1; --count)
-            ++x;
     }
 }

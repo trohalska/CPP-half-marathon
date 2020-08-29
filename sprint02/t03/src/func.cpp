@@ -49,19 +49,14 @@ static void printOne(const std::string& x, const std::string& y, int c) {
 }
 
 void printLib(const std::multimap<std::string, std::string>& lib) {
-
     auto x = lib.begin();
     while (x != lib.end()) {
-        printOne(x->first, x->second, 1);
-
-        std::string author = x->first;
         int count = 1;
-        for (auto y = ++x; y != lib.end(); ++y) {
-            if (author == y->first)
-                printOne(y->first, y->second, ++count);
-            else
-                break;
+        printOne(x->first, x->second, count);
+        std::string author = x->first;
+        ++x;
+        for (;author == x->first; ++x) {
+            printOne(x->first, x->second, ++count);
         }
-        while (count-- > 1) ++x;
     }
 }

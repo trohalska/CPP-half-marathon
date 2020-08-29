@@ -1,5 +1,6 @@
 // Подключаемый модуль
 #pragma once
+#include <list>
 #include <ostream>
 
 template<typename DataType>

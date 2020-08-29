@@ -1,4 +1,5 @@
 #pragma once
+#include <vector>
 #include "mylib.h"
 
 // template <typename T>
@@ -28,7 +29,7 @@ void reverseVector(std::vector<T>& a) {
         std::swap(a[i], a[n - 1 - i]);
 }
 template<typename T>
-std::vector<T> reverseVectorCopy(const vector<T>& v) {
+std::vector<T> reverseVectorCopy(const std::vector<T>& v) {
     std::vector<T> b;
     for (auto i = v.rbegin(); i != v.rend(); ++i)
         b.push_back(*i);

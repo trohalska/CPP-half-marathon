@@ -1,39 +1,26 @@
 #include "inventory.h"
 
-static bool check(char item) {
-    std::string s;
-
-    std::getline(std::cin, s);
-    if (s.length()) {
-        std::cerr << "Invalid command.\n";
-        return false;
-    }
-    if (item != 'w' && item != 'f' && item != 'a' && item != 'p') {
+static bool check(std::string item) {
+    if (item != "w" && item != "f" && item != "a" && item != "p") {
         std::cerr << "Invalid item.\n";
         return false;
     }
     return true;
 }
 
-void insert(std::vector<char>& inv) {
-    char item;
-
-    std::cin >> item;
+void insert(std::vector<char>& inv, std::string item) {
     if (!check(item)) return;
     else if (inv.size() >= 12) std::cerr << "Inventory is full.\n";
     else {
-        inv.push_back(item);
+        inv.push_back(item[0]);
         std::cout << item << " was inserted.\n";
     }
 }
 
-void remove(std::vector<char>& inv) {
-    char item;
-
-    std::cin >> item;
+void remove(std::vector<char>& inv, std::string item) {
     if (!check(item)) return;
     for (unsigned i = 0; i < inv.size(); ++i)
-        if (inv[i] == item) {
+        if (inv[i] == item[0]) {
             inv.erase(inv.begin() + i);
             break;
         }

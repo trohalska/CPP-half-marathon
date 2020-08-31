@@ -1,18 +1,14 @@
 #include "walletManager.h"
 
 Wallet* createWallet(int sept) {
-    if (!sept)
-        return NULL;
     Wallet* wallet = new Wallet();
     wallet->septims = sept;
     return wallet;
 }
 
 void destroyWallet(Wallet *wallet) {
-    if (!wallet)
-        return;
-    delete wallet;
-    wallet = NULL;
+    delete[] wallet;
+    wallet = nullptr;
 }
 
 Wallet* createWallets(int amount) {
@@ -20,8 +16,6 @@ Wallet* createWallets(int amount) {
 }
 
 void destroyWallets(Wallet *wallets) {
-    if (!wallets)
-        return;
-    delete wallets;
-    wallets = NULL;
+    delete[] wallets;
+    wallets = nullptr;
 }

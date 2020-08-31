@@ -24,6 +24,7 @@ int main(int argc, char *argv[]) {
     }
     catch (...) {
         std::cerr << "Invalid argument: " << argv[i] << std::endl;
+        return 1;
     }
     return 0;
 }

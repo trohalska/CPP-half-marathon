@@ -8,8 +8,10 @@ project(inventory LANGUAGES CXX)
 
 include_directories(src/)
 
-file(GLOB CPPS "src/*.cpp" "main.cpp")
-set(SOURCE main.cpp src/inventory.cpp)
-set(HEADER meadSong.h)
+add_subdirectory(src/)
+add_executable(${PROJECT_NAME} main.cpp)
 
-add_executable(${PROJECT_NAME} ${SOURCE})
+target_link_libraries(${PROJECT_NAME} PUBLIC mylib)
+target_include_directories(${PROJECT_NAME} PUBLIC
+                          "${PROJECT_BINARY_DIR}"
+                          "${PROJECT_SOURCE_DIR}/src")

@@ -13,7 +13,8 @@ static void printFirst(int32_t i) {
 static void printSecond(int32_t i, int32_t count) {
 
     i == -1 ? std::cout << "Go to the store and buy some more, " :
-              std::cout << "Take one down and pass it around, ";
+    i == 0 ? std::cout << "Take it " : std::cout << "Take one ";
+    i >= 0 ? std::cout << "down and pass it around, " : std::cout << "";
 
     i == 0 ? std::cout << "no more bottles" :
     i == -1 ? std::cout << count << " bottles" :

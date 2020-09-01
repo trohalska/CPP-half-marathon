@@ -3,7 +3,7 @@
 int main(int argc, char *argv[]) {
 
     if (5 != argc) {
-        std::cerr << "usage:./automaton [name] [level] [health] [stamina]";
+        std::cerr << "usage:./automaton [name] [level] [health] [stamina]\n";
         return EXIT_FAILURE;
     }
     int i = 1;

@@ -1,0 +1,159 @@
+----------------------------------------
+Compiling User files for t05
+User files successfully compiled!
+Running tests for t05 for User
+Compiling Test files for t05
+Test files successfully compiled!
+Running tests for t05 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 5 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Ok
+You get 5 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Failed
+
+user output vs test output
+1c1
+< usage:./automaton [name] [level] [health] [stamina]
+\ No newline at end of file
+---
+> usage:./automaton [name] [level] [health] [stamina]
+
+You lost 5 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 3 Failed
+
+user output vs test output
+1c1
+< usage:./automaton [name] [level] [health] [stamina]
+\ No newline at end of file
+---
+> usage:./automaton [name] [level] [health] [stamina]
+
+You lost 5 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 4 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 5 Ok
+You get 15 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 6 Ok
+You get 20 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 7 Ok
+You get 15 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 8 Failed
+
+user output vs test output
+1c1,5
+< Invalid argument: 1434.67-2
+---
+> Name = xe6cRH2Aevkm
+> OlO
+> Level = -1667337984
+> Health = 1434.67
+> Stamina = 13.963
+
+You lost 20 points
+----------------------------------------
+Total 70 points for t05 [ SUCCESS ]
+----------------------------------------
+----------------------------------------
+Compiling User files for t06
+User files successfully compiled!
+Running tests for t06 for User
+Compiling Test files for t06
+Test files successfully compiled!
+Running tests for t06 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Failed
+
+user output vs test output
+300d299
+<
+
+You lost 100 points
+----------------------------------------
+Total 0 points for t06 [ FAIL ]
+----------------------------------------
+----------------------------------------
+Running tests for t07 for User
+Running tests for t07 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Failed
+
+user output vs test output
+4c4
+< 3. show inventory
+---
+> 3. show
+
+You lost 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Ok
+You get 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 3 Failed
+
+user output vs test output
+1c1
+< Enter command:> p was removed.
+---
+> Enter command:> Invalid item.
+3,5c3,5
+< Enter command:> w was removed.
+< Enter command:> f was removed.
+< Enter command:> a was removed.
+---
+> Enter command:> Invalid item.
+> Enter command:> Invalid item.
+> Enter command:> Invalid item.
+10c10
+< 3. show inventory
+---
+> 3. show
+18c18
+< Enter command:> f was removed.
+---
+> Enter command:> Invalid item.
+27c27
+< 3. show inventory
+---
+> 3. show
+
+You lost 25 points
+----------------------------------------
+Total 50 points for t07 [ FAIL ]
+----------------------------------------

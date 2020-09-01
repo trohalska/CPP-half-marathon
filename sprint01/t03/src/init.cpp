@@ -1,14 +1,14 @@
 #include "header.h"
 
-void printlist(std::list<Rabbit> &population) {
-    for (auto i : population) {
-        if (i.gender == Gender::Male)
-            std::cout << '0';
-        else
-            std::cout << '1';
-        std::cout << " " << i.age << ' ' << i.isVampire << '\n';
-    }
-}
+// void printlist(std::list<Rabbit> &population) {
+//     for (auto i : population) {
+//         if (i.gender == Gender::Male)
+//             std::cout << '0';
+//         else
+//             std::cout << '1';
+//         std::cout << " " << i.age << ' ' << i.isVampire << '\n';
+//     }
+// }
 
 // -------------------------------------------------------------------
 
@@ -39,9 +39,9 @@ void countNewborn(std::list<Rabbit> &population, int &newBorn) {
     int maleNoVamp, femaleNoVamp;
 
     maleNoVamp = std::count_if(population.begin(), population.end(),
-                 [](Rabbit &r){ return(!r.isVampire && r.gender == Gender::Male); });
+                 [](Rabbit &r){return(!r.isVampire && r.gender == Gender::Male);});
     femaleNoVamp = std::count_if(population.begin(), population.end(),
-                   [](Rabbit &r){ return(!r.isVampire && r.gender == Gender::Female); });
+                   [](Rabbit &r){return(!r.isVampire && r.gender == Gender::Female);});
     newBorn = fmin(maleNoVamp, femaleNoVamp);
 }
 
@@ -72,5 +72,5 @@ void printpopulation(std::list<Rabbit> &population) {
 
     std::cout << "Males: " << male << std::endl
               << "Females: " << female << std::endl
-              << "Vampires: " << vamp << "\n\n";
+              << "Vampires: " << vamp << std::endl;
 }

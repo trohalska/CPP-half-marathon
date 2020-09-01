@@ -4,8 +4,6 @@
 #include <fstream>
 #include <sstream>
 
-// #include "mylib.h"
-
 void check(int argc);
 void fileToForwardList(std::string fname, std::forward_list<std::string>& f);
 void changeInside(std::forward_list<std::string>& f);

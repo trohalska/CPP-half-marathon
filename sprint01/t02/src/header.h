@@ -14,9 +14,8 @@ struct town {
 void parse(int args, char *argv[], std::deque<town> &res);
 bool jorney(std::deque<town> res);
 void printjorney(std::deque<town> res);
-void replasetowns(std::deque<town> &res);
-int toint(std::string s, std::string str);
 
+void check_error(const std::string& s, const std::vector<std::string> &v);
 void err1();
 void err2(std::string s);
 void err3();

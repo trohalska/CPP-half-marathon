@@ -17,7 +17,7 @@ void fileToForwardList(std::string fname, std::forward_list<std::string>& f) {
 
     try {
         std::ifstream fin(fname, std::ios::in | std::ios::binary);
-        if (!fin)
+        if (!fin || fin.peek() == std::ifstream::traits_type::eof())
             throw false;
         std::string s;
         while(fin >> s)
@@ -36,15 +36,15 @@ void printAll(const std::forward_list<std::string>& f) {
                 len = "true\n",
                 vel = "true\n";
 
-    for (auto i = f.begin(); i != f.end(); ++i) {
+    for (auto x : f) {
         size++;
-        if ((*i).find("rich") != std::string::npos)
+        if (x.find("rich") != std::string::npos)
             rich = "true\n";
-        if ((*i).length() == 15)
+        if (x.length() == 15)
             len = "false\n";
-        if ((*i).find("vel") != (*i).length() - 3)
+        if (x.find("vel") != x.length() - 3)
             vel = "false\n";
-        if ((*i).find("mel") == std::string::npos)
+        if (x.find("mel") == std::string::npos)
             mel++;
     }
     std::cout << "size: " << size << std::endl

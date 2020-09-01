@@ -1,6 +1,5 @@
 #pragma once
 #include <iostream>
-#include <vector>
-#include "mytemplates.h"
+#include <array>
 
-void sortAscii(std::vector<std::string> &res, char *argv[]);
+void sortAscii(std::array<std::string, 5>& res, char *argv[]);

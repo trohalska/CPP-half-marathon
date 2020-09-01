@@ -1,34 +1,6 @@
 #include "header.h"
 
-void parse(int argc, char *argv[], std::deque<town> &res) {
-
-    if (argc < 2)
-        err1();
-
-    for(int i = 1; argv[i]; ++i) {
-        std::string s;
-        std::vector<std::string> v;
-        town t;
-
-        s = argv[i];
-        split(s, v, ',');
-
-        if (v.size() != 3)
-            err2(s);
-        for (auto i : v)
-            if (i[0] == '\0')
-                err2(s);
-
-        t.name = v[0];
-        t.stamina = toint(v[1], s);
-        t.distance = toint(v[2], s);
-        t.position = i - 1;
-
-        res.push_back(t);
-    }
-}
-
-int toint(std::string s, std::string str) {
+static int toint(std::string s, std::string str) {
     int res;
     size_t ind;
 
@@ -38,10 +10,31 @@ int toint(std::string s, std::string str) {
             throw false;
     }
     catch (...) {
-        std::cerr << "Argument " << str << " is not valid\n";
-        exit(EXIT_FAILURE);
+        err2(str);
     }
     return res;
+}
+
+void parse(int argc, char *argv[], std::deque<town> &res) {
+    for(int i = 1; i < argc; ++i) {
+        std::string s;
+        std::vector<std::string> v;
+        town t;
+
+        s = argv[i];
+        split(s, v, ',');
+
+        check_error(s, v);
+        if (argc == 2)
+            err3();
+
+        t.name = v[0];
+        t.stamina = toint(v[1], s);
+        t.distance = toint(v[2], s);
+        t.position = i - 1;
+
+        res.push_back(t);
+    }
 }
 
 bool jorney(std::deque<town> res) {
@@ -60,10 +53,4 @@ bool jorney(std::deque<town> res) {
 void printjorney(std::deque<town> res) {
     for (auto i : res)
         std::cout << i.position << ". " << i.name << '\n';
-}
-
-void replasetowns(std::deque<town> &res) {
-    town tmp = res[0];
-    res.pop_front();
-    res.push_back(tmp);
 }

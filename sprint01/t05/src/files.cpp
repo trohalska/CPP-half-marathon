@@ -3,7 +3,7 @@
 void fileToForwardList(std::string fname, std::forward_list<std::string>& f) {
     try {
         std::ifstream fin(fname, std::ios::in | std::ios::binary);
-        if (!fin)
+        if (!fin || fin.peek() == std::ifstream::traits_type::eof())
             throw false;
         std::string s;
         while(fin >> s)

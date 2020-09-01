@@ -30,4 +30,4 @@ void countNewborn(std::list<Rabbit> &population, int &m);
 void turnVampires(std::list<Rabbit> &population);
 void printpopulation(std::list<Rabbit> &population);
 
-void printlist(std::list<Rabbit> &population);
+// void printlist(std::list<Rabbit> &population);

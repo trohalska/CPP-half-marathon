@@ -1,9 +1,9 @@
 #include "referenceOrPointer.h"
 
 void multiplyByPointer(int* ptr, int mult) {
-    std::cout << mult * *ptr << std::endl;
+    *ptr *= mult;
 }
 
 void multiplyByReference(int& ref, int mult) {
-    std::cout <<  mult * ref << std::endl;
+    ref *= mult;
 }

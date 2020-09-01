@@ -2,13 +2,15 @@
 #include "referenceOrPointer.h"
 
 int main() {
-    int t = 6;
     int w = 5;
+
+    int t = 6;
     multiplyByPointer(&t, w);
 
     int i = 10;
-    int& r = i;
-    multiplyByReference(r, w);
+    multiplyByReference(i, w);
+
+    std::cout << t << " " << i << '\n';
 
     return 0;
 }

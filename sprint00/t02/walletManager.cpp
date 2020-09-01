@@ -7,8 +7,7 @@ Wallet* createWallet(int sept) {
 }
 
 void destroyWallet(Wallet *wallet) {
-    delete[] wallet;
-    wallet = nullptr;
+    delete wallet;
 }
 
 Wallet* createWallets(int amount) {
@@ -17,5 +16,4 @@ Wallet* createWallets(int amount) {
 
 void destroyWallets(Wallet *wallets) {
     delete[] wallets;
-    wallets = nullptr;
 }

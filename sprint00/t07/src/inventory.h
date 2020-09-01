@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
+#include <sstream>
 #include <vector>
-#include "../../../mylib/mylib.h"
 
 void insert(std::vector<char>& inv, std::string item);
 void remove(std::vector<char>& inv, std::string item);

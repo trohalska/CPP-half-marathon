@@ -14,12 +14,12 @@
 int strToInt(std::string s);
 
 template <class Container>
-void mysplit(const std::string& str, Container& cont, char delim = ' ') {
+void mysplit(const std::string& str, Container& c, char delim = ' ') {
     std::stringstream ss(str);
     std::string token;
     while (std::getline(ss, token, delim)) {
         if (token != "")
-            cont.push_back(token);
+            c.push_back(token);
     }
 }
 template <class Container>

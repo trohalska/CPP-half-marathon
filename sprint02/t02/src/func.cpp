@@ -20,8 +20,6 @@ void handle_cin(std::map<std::string, std::string>& lib) {
         } else if (cmd.size() == 1) {
             if (cmd[0] == "list")
                 list(lib);
-            else if (cmd[0] == "help")
-                help();
             else if (cmd[0] == "quit") {
                 std::cout << "bye\n";
                 break;
@@ -60,14 +58,4 @@ void read(const std::map<std::string, std::string>& lib, const std::string& b) {
 void list(const std::map<std::string, std::string>& lib) {
     for (auto [book, item] : lib)
         std::cout << book << std::endl;
-}
-
-void help() {
-    std::cout << "\nAvailable commands:\n";
-    std::cout << "1. add <bookName>\n";
-    std::cout << "2. delete <bookName>\n";
-    std::cout << "3. read <bookName>\n";
-    std::cout << "4. list\n";
-    std::cout << "5. help\n";
-    std::cout << "6. quit\n\n";
 }

@@ -12,14 +12,14 @@
 
 // -------------------------------------------------------------------
 
-void addRabbits(std::list<Rabbit> &population, int count) {
+void addRabbits(std::list<Rabbit> &population, int count, int& countBornVamp) {
     for (int i = 0; i < count; ++i) {
         Rabbit r;
         r.age = 0;
         r.gender = (rand() % 100) < 50 ? Gender::Male : Gender::Female;
         r.isVampire = (rand() % 100) == 1 ? true : false;
-        // r.isTrueBornVampire = r.isVampire ? true : false;
-
+        if (r.isVampire)
+          countBornVamp++;
         population.push_back(r);
     }
 }
@@ -45,18 +45,13 @@ void countNewborn(std::list<Rabbit> &population, int &newBorn) {
     newBorn = fmin(maleNoVamp, femaleNoVamp);
 }
 
-void turnVampires(std::list<Rabbit> &population) {
+void turnVampires(std::list<Rabbit> &population, int countBornVamp) {
 
-    int vamp = std::count_if(population.begin(), population.end(),
-               [](Rabbit &r){ return(r.isVampire); });
-    // int vamp = std::count_if(population.begin(), population.end(),
-    //            [](Rabbit &r){ return(r.isTrueBornVampire); });
-
-    while (vamp != 0) {
+    while (countBornVamp != 0) {
         auto newVamp = std::find_if_not(population.begin(), population.end(),
                        [](Rabbit &r){ return(r.isVampire); });
         (*newVamp).isVampire = true;
-        vamp--;
+        countBornVamp--;
     }
 }
 

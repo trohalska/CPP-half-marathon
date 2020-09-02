@@ -2,8 +2,9 @@
 
 int main() {
     std::list<Rabbit> population;
+    int countBornVamp = 0;
 
-    addRabbits(population, 10);
+    addRabbits(population, 10, countBornVamp);
     printpopulation(population);
     std::cout << '\n';
 
@@ -12,13 +13,13 @@ int main() {
         std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
         addAge(population);
-        clean(population);
+        turnVampires(population, countBornVamp);
 
         int newBorn = 0;
         countNewborn(population, newBorn);
-        addRabbits(population, newBorn);
+        addRabbits(population, newBorn, countBornVamp);
 
-        turnVampires(population);
+        clean(population);
 
         // printlist(population);
         printpopulation(population);

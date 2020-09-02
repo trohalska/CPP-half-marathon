@@ -20,14 +20,13 @@ struct Rabbit {
     Gender gender;
     bool isVampire;
     int age;
-    // bool isTrueBornVampire;
 };
 
-void addRabbits(std::list<Rabbit> &population, int count);
+void addRabbits(std::list<Rabbit> &population, int count, int& countBornVamp);
 void addAge(std::list<Rabbit> &population);
 void clean(std::list<Rabbit> &population);
 void countNewborn(std::list<Rabbit> &population, int &m);
-void turnVampires(std::list<Rabbit> &population);
+void turnVampires(std::list<Rabbit> &population, int countBornVamp);
 void printpopulation(std::list<Rabbit> &population);
 
 // void printlist(std::list<Rabbit> &population);

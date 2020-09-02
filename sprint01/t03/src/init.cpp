@@ -1,16 +1,14 @@
 #include "header.h"
 
-// void printlist(std::list<Rabbit> &population) {
-//     for (auto i : population) {
-//         if (i.gender == Gender::Male)
-//             std::cout << '0';
-//         else
-//             std::cout << '1';
-//         std::cout << " " << i.age << ' ' << i.isVampire << '\n';
-//     }
-// }
-
-// -------------------------------------------------------------------
+void printlist(std::list<Rabbit> &population) {
+    for (auto i : population) {
+        if (i.gender == Gender::Male)
+            std::cout << '0';
+        else
+            std::cout << '1';
+        std::cout << " " << i.age << ' ' << i.isVampire << '\n';
+    }
+}
 
 void addRabbits(std::list<Rabbit> &population, int count, int& countBornVamp) {
     for (int i = 0; i < count; ++i) {
@@ -29,10 +27,12 @@ void addAge(std::list<Rabbit> &population) {
 }
 
 void clean(std::list<Rabbit> &population) {
-    std::remove_if(population.begin(), population.end(), [](Rabbit &r)
-                   { return(r.isVampire && r.age > 8); });
-    std::remove_if(population.begin(), population.end(), [](Rabbit &r)
-                   { return(!r.isVampire && r.age > 3); });
+    population.erase(std::remove_if(population.begin(), population.end(),
+                    [](Rabbit &r){ return(r.isVampire && r.age > 8); }),
+                    population.end());
+    population.erase(std::remove_if(population.begin(), population.end(),
+                    [](Rabbit &r){ return(!r.isVampire && r.age > 3); }),
+                    population.end());
 }
 
 void countNewborn(std::list<Rabbit> &population, int &newBorn) {

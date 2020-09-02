@@ -3,6 +3,7 @@
 int main() {
     std::list<Rabbit> population;
     int countBornVamp = 0;
+    std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
     addRabbits(population, 10, countBornVamp);
     printpopulation(population);

@@ -1,0 +1,177 @@
+----------------------------------------
+Compiling User files for t02
+User files successfully compiled!
+Running tests for t02 for User
+Compiling Test files for t02
+Test files successfully compiled!
+Running tests for t02 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 5 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Ok
+You get 5 points
+----------------------------------------
+---------------------------------------- // fixed
+Comparing outputs
+Test case 2 Failed
+
+user output vs test output
+1,3c1
+< 2. Falkreath
+< 0. Vivec City
+< 1. Sadrith City
+---
+> Mission: Impossible
+
+You lost 10 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 3 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 4 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------  // fixed
+Comparing outputs
+Test case 5 Failed
+
+user output vs test output
+1d0
+< 1. Malabal Tor
+5a5
+> 1. Malabal Tor
+
+You lost 20 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 6 Ok
+You get 20 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 7 Ok
+You get 20 points
+----------------------------------------
+Total 70 points for t02 [ SUCCESS ]
+----------------------------------------
+----------------------------------------
+Compiling User files for t04
+User files successfully compiled!
+Running tests for t04 for User
+Compiling Test files for t04
+Test files successfully compiled!
+Running tests for t04 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------  // fixed
+Comparing outputs
+Test case 1 Failed
+
+user output vs test output
+5c5
+< not contains 'mel': 832
+---
+> without 'mel': 832
+
+You lost 15 points
+----------------------------------------
+----------------------------------------  ??????
+Comparing outputs
+Test case 2 Failed
+
+user output vs test output
+1c1,5
+< error
+---
+> size: 0
+> contains 'rich': false
+> none of lengths is 15: true
+> all end with 'vel': false
+> without 'mel': 0
+
+You lost 20 points
+----------------------------------------
+----------------------------------------  // fixed
+Comparing outputs
+Test case 3 Failed
+
+user output vs test output
+5c5
+< not contains 'mel': 15
+---
+> without 'mel': 15
+
+You lost 15 points
+----------------------------------------
+----------------------------------------  // fixed
+Comparing outputs
+Test case 4 Failed
+
+user output vs test output
+1c1
+< size: 4950
+---
+> size: 4945
+5c5
+< not contains 'mel': 4924
+---
+> without 'mel': 4919
+
+You lost 20 points
+----------------------------------------
+----------------------------------------  // fixed
+Comparing outputs
+Test case 5 Failed
+
+user output vs test output
+5c5
+< not contains 'mel': 1913
+---
+> without 'mel': 1913
+
+You lost 20 points
+----------------------------------------
+Total 10 points for t04 [ FAIL ]
+----------------------------------------
+----------------------------------------
+Running tests for t05 for User
+Running tests for t05 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------  // fixed
+Comparing outputs
+Test case 1 Failed
+
+user output vs test output
+2a3
+> Zsa Zsa
+107d107
+< Verne
+798d797
+< Miof
+1205a1205
+> La Verne
+1418a1419
+> Jo Ann
+1998a2000
+> Dee Dee
+
+You lost 90 points
+----------------------------------------
+Total 10 points for t05 [ FAIL ]
+----------------------------------------

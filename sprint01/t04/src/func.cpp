@@ -16,11 +16,11 @@ bool exist(std::string PATH) {
 void fileToForwardList(std::string fname, std::forward_list<std::string>& f) {
 
     try {
-        std::ifstream fin(fname, std::ios::in | std::ios::binary);
+        std::ifstream fin(fname, std::ios::in);
         if (!fin || fin.peek() == std::ifstream::traits_type::eof())
             throw false;
         std::string s;
-        while(fin >> s)
+        while(std::getline(fin, s))
             f.push_front(s);
     }
     catch (...) {
@@ -30,14 +30,13 @@ void fileToForwardList(std::string fname, std::forward_list<std::string>& f) {
 }
 
 void printAll(const std::forward_list<std::string>& f) {
-    int size = 0,
+    int size = std::distance(f.begin(), f.end()),
         mel = 0;
     std::string rich = "false\n",
                 len = "true\n",
                 vel = "true\n";
 
     for (auto x : f) {
-        size++;
         if (x.find("rich") != std::string::npos)
             rich = "true\n";
         if (x.length() == 15)
@@ -51,5 +50,5 @@ void printAll(const std::forward_list<std::string>& f) {
               << "contains 'rich': " << rich
               << "none of lengths is 15: " << len
               << "all end with 'vel': " << vel
-              << "not contains 'mel': " << mel << std::endl;
+              << "without 'mel': " << mel << std::endl;
 }

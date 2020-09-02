@@ -6,7 +6,7 @@ void fileToForwardList(std::string fname, std::forward_list<std::string>& f) {
         if (!fin || fin.peek() == std::ifstream::traits_type::eof())
             throw false;
         std::string s;
-        while(fin >> s)
+        while(std::getline(fin, s))
             f.push_front(s);
     }
     catch (...) {

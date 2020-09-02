@@ -15,7 +15,7 @@ Comparing outputs
 Test case 1 Ok
 You get 5 points
 ----------------------------------------
-----------------------------------------
+----------------------------------------  // fixed
 Comparing outputs
 Test case 2 Failed
 
@@ -28,7 +28,7 @@ user output vs test output
 
 You lost 5 points
 ----------------------------------------
-----------------------------------------
+----------------------------------------  // fixed
 Comparing outputs
 Test case 3 Failed
 
@@ -86,7 +86,7 @@ Running tests for t06 for User
 Compiling Test files for t06
 Test files successfully compiled!
 Running tests for t06 for Test
-----------------------------------------
+----------------------------------------  // fixed
 Comparing outputs
 Test case 0 Failed
 
@@ -106,7 +106,7 @@ Comparing outputs
 Test case 0 Ok
 You get 25 points
 ----------------------------------------
-----------------------------------------
+----------------------------------------  ?????
 Comparing outputs
 Test case 1 Failed
 

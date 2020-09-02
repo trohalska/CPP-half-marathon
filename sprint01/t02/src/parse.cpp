@@ -42,8 +42,8 @@ bool jorney(std::deque<town> res) {
 
     for (unsigned long i = 0; i < res.size() - 1; ++i) {
         storage += res[i].stamina;
-        if (storage >= res[i + 1].distance)
-            storage = storage - res[i + 1].distance;
+        if (storage >= res[i].distance)
+            storage -= res[i].distance;
         else
             return false;
     }

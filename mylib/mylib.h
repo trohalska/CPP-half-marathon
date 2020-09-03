@@ -37,7 +37,7 @@ template <class Container>
 void outputAny(const Container& c) {
     for (auto x : c)
         std::cout << x << " ";
-    srd::cout << '\n';
+    std::cout << '\n';
 }
 // print any container, NOT PAIR
 template <typename Container>
@@ -82,7 +82,7 @@ void fileToContainer(std::string fname, Container& c, T& s) {
     }
 }
 template <class Container, class T>
-void containerToFile(std::string fname, const Container& c, std::string delim = '\n') {
+void containerToFile(std::string fname, const Container& c, std::string delim = "\n") {
     std::fstream fout(fname, std::fstream::out | std::fstream::binary);
     for (auto x : c)
         fout << x << delim;

@@ -1,0 +1,197 @@
+Checking gitlab.ucode.world:/unit-factory-kyiv/cpp-sprint02/trohalska.git
+----------------------------------------
+Running tests for t00 for User
+Running tests for t00 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Ok
+You get 30 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Ok
+You get 30 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 3 Failed
+
+user output vs test output
+10d9
+< We…
+
+You lost 30 points
+----------------------------------------
+Total 70 points for t00 [ SUCCESS ]
+----------------------------------------
+----------------------------------------
+Running tests for t01 for User
+Running tests for t01 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Failed
+
+user output vs test output
+1d0
+< (beyond: 1
+51a51
+> beyond: 1
+174c174
+< suppose),: 1
+---
+> suppose: 1
+
+You lost 30 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Failed
+
+user output vs test output
+1d0
+< "This: 1
+50a50
+> This: 1
+68c68
+< born:: 1
+---
+> born: 1
+82,83c82
+< destiny: 1
+< destiny:: 1
+---
+> destiny: 2
+142c141
+< other.": 1
+---
+> other: 1
+144c143
+< past...: 1
+---
+> past: 1
+158c157
+< simple...: 1
+---
+> simple: 1
+180c179
+< traitor-priests?: 1
+---
+> traitor-priests: 1
+
+You lost 30 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 3 Ok
+You get 30 points
+----------------------------------------
+Total 40 points for t01 [ FAIL ]
+----------------------------------------
+----------------------------------------
+Running tests for t02 for User
+Running tests for t02 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Ok
+You get 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Ok
+You get 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 3 Failed
+
+user output vs test output
+4,5c4
+< enter command:> invalid command
+< enter command:> invalid book
+---
+> enter command:> enter command:> invalid book
+14c13,14
+< enter command:> invalid command
+---
+> enter command:> The_Oblivion_Crisis.txt
+> the_exodus.txt
+18c18,20
+< enter command:> invalid command
+---
+> enter command:> The_Oblivion_Crisis.txt
+> bonemold_formula.txt
+> the_exodus.txt
+
+You lost 25 points
+----------------------------------------
+Total 75 points for t02 [ SUCCESS ]
+----------------------------------------
+----------------------------------------
+Compiling User files for t03
+User files successfully compiled!
+Running tests for t03 for User
+Compiling Test files for t03
+Test files successfully compiled!
+Running tests for t03 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Failed
+
+user output vs test output
+1c1,14
+< Line 5 is invalid
+---
+> Aldetuile:
+>  1: Cats of Skyrim
+> Carlovac Townway:
+>  1: 2920, vol 06 - Mid Year
+>  2: 2920, vol 03 - First Seed
+> Reven:
+>  1: Beggar
+> Torhal Bjorik:
+>  1: There Be Dragons
+> Warrior:
+>  1: Reven
+> Waughin Jarth:
+>  1: A Dance in Fire, Book VII
+>  2: The Argonian Account, Book IV
+
+You lost 15 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Ok
+You get 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 3 Ok
+You get 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 4 Ok
+You get 25 points
+----------------------------------------
+Total 85 points for t03 [ SUCCESS ]
+----------------------------------------

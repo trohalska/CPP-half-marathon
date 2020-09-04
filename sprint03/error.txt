@@ -1,0 +1,177 @@
+----------------------------------------
+Checking gitlab.ucode.world:/unit-factory-kyiv/cpp-sprint03/trohalska.git
+----------------------------------------
+Compiling User files for t00
+User files successfully compiled!
+Running tests for t00 for User
+Compiling Test files for t00
+Test files successfully compiled!
+Running tests for t00 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 20 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Ok
+You get 40 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Ok
+You get 40 points
+----------------------------------------
+Total 100 points for t00 [ SUCCESS ]
+----------------------------------------
+----------------------------------------
+Compiling User files for t01
+User files successfully compiled!
+Running tests for t01 for User
+Compiling Test files for t01
+Test files successfully compiled!
+Running tests for t01 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 33 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Ok
+You get 33 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Ok
+You get 34 points
+----------------------------------------
+Total 100 points for t01 [ SUCCESS ]
+----------------------------------------
+----------------------------------------  // fixed
+Compiling User files for t02
+Compilation error!
+User files compilation failed!
+Skipping tests for t02!
+----------------------------------------
+False
+----------------------------------------
+Compiling User files for t03
+User files successfully compiled!
+Running tests for t03 for User
+Compiling Test files for t03
+Test files successfully compiled!
+Running tests for t03 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Ok
+You get 20 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 3 Ok
+You get 20 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 4 Ok
+You get 20 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 5 Ok
+You get 20 points
+----------------------------------------
+Total 100 points for t03 [ SUCCESS ]
+----------------------------------------
+----------------------------------------
+Compiling User files for t04
+User files successfully compiled!
+Running tests for t04 for User
+Compiling Test files for t04
+Test files successfully compiled!
+Running tests for t04 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 33 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Ok
+You get 33 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Ok
+You get 34 points
+----------------------------------------
+Total 100 points for t04 [ SUCCESS ]
+----------------------------------------
+----------------------------------------
+Compiling User files for t05
+User files successfully compiled!
+Running tests for t05 for User
+Compiling Test files for t05
+Test files successfully compiled!
+Running tests for t05 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Ok
+You get 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Ok
+You get 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 3 Ok
+You get 25 points
+----------------------------------------
+Total 100 points for t05 [ SUCCESS ]
+----------------------------------------
+----------------------------------------
+Compiling User files for t06
+User files successfully compiled!
+Running tests for t06 for User
+Compiling Test files for t06
+Test files successfully compiled!
+Running tests for t06 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 100 points
+----------------------------------------
+Total 100 points for t06 [ SUCCESS ]
+----------------------------------------
+----------------------------------------
+Compiling User files for t07
+User files successfully compiled!
+Running tests for t07 for User
+Compiling Test files for t07
+Test files successfully compiled!
+Running tests for t07 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 100 points
+----------------------------------------
+Total 100 points for t07 [ SUCCESS ]
+----------------------------------------

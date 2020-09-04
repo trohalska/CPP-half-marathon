@@ -29,8 +29,7 @@ template <class T, class U = T>
 bool Modify(T& obj, U&& new_value) {
     if (obj == new_value) {
         return false;
-    }
-    else {
+    } else {
         obj = std::forward<T>(new_value);
         return true;
     }
@@ -38,12 +37,12 @@ bool Modify(T& obj, U&& new_value) {
 // RemoveAll(i, 1);
 template <class Collection, class T>
 void RemoveAll(Collection& c, const T& value) {
-    c.erase(std::remove(c.begin(), c.end(), value), c.end());
+    c = Collection (c.begin(), std::remove(c.begin(), c.end(), value));
 }
 // RemoveAllIf(i, [](int x){return x > 2;});
 template <class Collection, class Pred>
 void RemoveAllIf(Collection& c, Pred&& predicate) {
-    c.erase(std::remove_if(begin(c), end(c), std::forward<Pred>(predicate)), c.end());
+    c = Collection (c.begin(), std::remove_if(c.begin(), c.end(), std::forward<Pred>(predicate)));
 }
 //FindIf(i, 2)
 template <class Collection, class T>
@@ -55,7 +54,6 @@ template <class Collection, class Pred>
 auto FindIf(Collection& c, Pred&& predicate) {
     return std::find_if(begin(c), end(c), std::forward<Pred>(predicate));
 }
-
 template <class Collection, class T>
 bool Contains(const Collection& c, const T& value) {
     return std::find(begin(c), end(c), value) != c.end();
@@ -105,28 +103,41 @@ auto MinElement(const Collection& c, Comp&& comparator) {
 
 template <class Collection>
 void Sort(Collection& c) {
-    std::sort(c.begin(), c.end());
+    typename Collection::iterator min;
+    for (typename Collection::iterator i = c.begin(); i != c.end(); ++i) {
+        min = i;
+        for (typename Collection::iterator j = i; j != c.end(); ++j)
+            if (*j < *min)
+                min = j;
+        iter_swap(min, i);
+    }
 }
 
-// Sort(i, [](int x, int y){ return x > y; });
+// Sort(i, [](int x, int y){ return x < y; });
 template <class Collection, class Comp>
 void Sort(Collection& c, Comp&& comparator) {
-    std::sort(c.begin(), c.end(), std::forward<Comp>(comparator));
+    typename Collection::iterator min;
+    for (typename Collection::iterator i = c.begin(); i != c.end(); ++i) {
+        min = i;
+        for (typename Collection::iterator j = i; j != c.end(); ++j)
+            if (comparator(*j, *min))
+                min = j;
+        iter_swap(min, i);
+    }
 }
 
 // remove all not unique elements in collection
 template <class Collection>
 void Unique(Collection& c) {
     Sort(c);
-    c.erase(std::unique(c.begin(), c.end()), c.end());
+    c = Collection (c.begin(), std::unique(c.begin(), c.end()));
 }
 
 // Unique(i, [](int x, int y){ return x == y; });
 template <class Collection, class Pred>
 void Unique(Collection& c, Pred&& predicate) {
     Sort(c);
-    c.erase(std::unique(c.begin(), c.end(), predicate),
-            c.end());
+    c = Collection (c.begin(), std::unique(c.begin(), c.end(), predicate));
 }
 
 template <class Collection, class Pred>

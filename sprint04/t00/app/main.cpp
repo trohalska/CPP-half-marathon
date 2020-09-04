@@ -174,6 +174,8 @@ void TestIsInRange()
 }
 void TestIsInRangePair()
 {
+    std::pair<int, int> x = std::pair(5,10);
+    ASSERT_EQUAL(IsInRange(2, {x.first, x.second}), false);
     ASSERT_EQUAL(IsInRange(2, {5, 10}), false);
     ASSERT_EQUAL(IsInRange(-12345678, {INT_MIN, INT_MAX}), true);
     ASSERT_EQUAL(IsInRange(-12345678, {0, 1000}), false);
@@ -220,38 +222,38 @@ void TestModify()
 void TestRemove()
 {
     vector<int> v{1, 2, 3, 4, 3, 3, 5};
-    // list<int> l{1, 2, 3, 4, 5};
-    // forward_list<int> fl{1, 2, 3, 4, 5};
+    list<int> l{1, 2, 3, 4, 5};
+    forward_list<int> fl{1, 2, 3, 4, 5};
 
     vector<int> vr{1, 2, 4, 5};
-    // list<int> lr{1, 2, 4, 5};
-    // forward_list<int> flr{1, 2, 4, 5};
+    list<int> lr{1, 2, 4, 5};
+    forward_list<int> flr{1, 2, 4, 5};
 
     RemoveAll(v, 3);
-    // RemoveAll(l, 3);
-    // RemoveAll(fl, 3);
+    RemoveAll(l, 3);
+    RemoveAll(fl, 3);
 
     ASSERT(equal(v.begin(), v.end(), vr.begin()));
-    // ASSERT(equal(l.begin(), l.end(), lr.begin()));
-    // ASSERT(equal(fl.begin(), fl.end(), flr.begin()));
+    ASSERT(equal(l.begin(), l.end(), lr.begin()));
+    ASSERT(equal(fl.begin(), fl.end(), flr.begin()));
 }
 void TestRemoveIf()
 {
     vector<int> v{1, 2, 3, 4, 3, 3, 5};
-    // list<int> l{1, 2, 3, 4, 5};
-    // forward_list<int> fl{1, 2, 3, 4, 5};
+    list<int> l{1, 2, 3, 4, 5};
+    forward_list<int> fl{1, 2, 3, 4, 5};
 
     RemoveAllIf(v, [](const auto &a) { return a == 3; });
-    // RemoveAllIf(l, [](const auto &a) { return a == 3; });
-    // RemoveAllIf(fl, [](const auto &a) { return a == 3; });
+    RemoveAllIf(l, [](const auto &a) { return a == 3; });
+    RemoveAllIf(fl, [](const auto &a) { return a == 3; });
 
     vector<int> vr{1, 2, 4, 5};
-    // list<int> lr{1, 2, 4, 5};
-    // forward_list<int> flr{1, 2, 4, 5};
+    list<int> lr{1, 2, 4, 5};
+    forward_list<int> flr{1, 2, 4, 5};
 
     ASSERT(equal(v.begin(), v.end(), vr.begin()));
-    // ASSERT(equal(l.begin(), l.end(), lr.begin()));
-    // ASSERT(equal(fl.begin(), fl.end(), flr.begin()));
+    ASSERT(equal(l.begin(), l.end(), lr.begin()));
+    ASSERT(equal(fl.begin(), fl.end(), flr.begin()));
 }
 
 void TestFind()
@@ -365,51 +367,113 @@ void TestMinElementComp()
     ASSERT_EQUAL(*MinElement(fl, [](int a, int b) { return (std::abs(a) < std::abs(b)); }), 1);
 }
 
+void TestSort()
+{
+    vector<int> v{5, 3, 1, 4, 2};
+    list<int> l{5, 3, 1, 4, 2};
+    forward_list<int> fl{5, 3, 1, 4, 2};
+
+    vector<int> vr{1, 2, 3, 4, 5};
+    list<int> lr{1, 2, 3, 4, 5};
+    forward_list<int> flr{1, 2, 3, 4, 5};
+
+    Sort(v);
+    Sort(l);
+    Sort(fl);
+
+    // for (auto x : v)
+    //     std::cout << x << ' ';
+    // std::cout << '\n';
+
+
+    ASSERT(equal(v.begin(), v.end(), vr.begin()));
+    ASSERT(equal(l.begin(), l.end(), lr.begin()));
+    ASSERT(equal(fl.begin(), fl.end(), flr.begin()));
+}
+
+void TestSortComp()
+{
+    vector<int> v{5, 3, 1, 4, 2};
+    list<int> l{5, 3, 1, 4, 2};
+    forward_list<int> fl{5, 3, 1, 4, 2};
+
+    vector<int> vr{1, 2, 3, 4, 5};
+    list<int> lr{1, 2, 3, 4, 5};
+    forward_list<int> flr{1, 2, 3, 4, 5};
+
+    Sort(v, [](int a, int b) { return a < b; });
+    Sort(l, [](int a, int b) { return a < b; });
+    Sort(fl, [](int a, int b) { return a < b; });
+
+    ASSERT(equal(v.begin(), v.end(), vr.begin()));
+    ASSERT(equal(l.begin(), l.end(), lr.begin()));
+    ASSERT(equal(fl.begin(), fl.end(), flr.begin()));
+}
+
 void TestUnique()
 {
     vector<int> v{1, 2, 2, 3, 4, 4, 4, 5, 5};
-    // list<int> l{1, 2, 2, 3, 4, 4, 4, 5, 5};
-    // forward_list<int> fl{1, 2, 2, 3, 4, 4, 4, 5, 5};
+    list<int> l{1, 2, 2, 3, 4, 4, 4, 5, 5};
+    forward_list<int> fl{1, 2, 2, 3, 4, 4, 4, 5, 5};
 
     vector<int> vr{1, 2, 3, 4, 5};
-    // list<int> lr{1, 2, 3, 4, 5};
-    // forward_list<int> flr{1, 2, 3, 4, 5};
+    list<int> lr{1, 2, 3, 4, 5};
+    forward_list<int> flr{1, 2, 3, 4, 5};
 
     Unique(v);
-    // Unique(l);
-    // Unique(fl);
+    Unique(l);
+    Unique(fl);
 
     ASSERT(equal(v.begin(), v.end(), vr.begin()));
-    // ASSERT(equal(l.begin(), l.end(), lr.begin()));
-    // ASSERT(equal(fl.begin(), fl.end(), flr.begin()));
+    ASSERT(equal(l.begin(), l.end(), lr.begin()));
+    ASSERT(equal(fl.begin(), fl.end(), flr.begin()));
 }
 
 void TestUniqueIf()
 {
     vector<int> v{1, 2, 2, 3, 4, 4, 4, 5, 5};
-    // list<int> l{1, 2, 2, 3, 4, 4, 4, 5, 5};
-    // forward_list<int> fl{1, 2, 2, 3, 4, 4, 4, 5, 5};
+    list<int> l{1, 2, 2, 3, 4, 4, 4, 5, 5};
+    forward_list<int> fl{1, 2, 2, 3, 4, 4, 4, 5, 5};
 
     vector<int> vr{1, 2, 2, 3, 4, 5, 5};
-    // list<int> lr{1, 2, 2, 3, 4, 5, 5};
-    // forward_list<int> flr{1, 2, 2, 3, 4, 5, 5};
+    list<int> lr{1, 2, 2, 3, 4, 5, 5};
+    forward_list<int> flr{1, 2, 2, 3, 4, 5, 5};
 
     Unique(v, [](const auto &a, const auto &b) { return a == 4; });
-    // Unique(l, [](const auto &a, const auto &b) { return a == 4; });
-    // Unique(fl, [](const auto &a, const auto &b) { return a == 4; });
+    Unique(l, [](const auto &a, const auto &b) { return a == 4; });
+    Unique(fl, [](const auto &a, const auto &b) { return a == 4; });
 
     ASSERT(equal(v.begin(), v.end(), vr.begin()));
-    // ASSERT(equal(l.begin(), l.end(), lr.begin()));
-    // ASSERT(equal(fl.begin(), fl.end(), flr.begin()));
+    ASSERT(equal(l.begin(), l.end(), lr.begin()));
+    ASSERT(equal(fl.begin(), fl.end(), flr.begin()));
+}
+
+void TestForEach()
+{
+    vector<int> v{0, 1, 1, 2, 3, 4, 4};
+    list<int> l{0, 1, 1, 2, 3, 4, 4};
+    forward_list<int> fl{0, 1, 1, 2, 3, 4, 4};
+
+    vector<int> vr{1, 2, 2, 3, 4, 5, 5};
+    list<int> lr{1, 2, 2, 3, 4, 5, 5};
+    forward_list<int> flr{1, 2, 2, 3, 4, 5, 5};
+
+    ForEach(v, [](auto &a) { return a++; });
+    ForEach(l, [](auto &a) { return a++; });
+    ForEach(fl, [](auto &a) { return a++; });
+
+    ASSERT(equal(v.begin(), v.end(), vr.begin()));
+    ASSERT(equal(l.begin(), l.end(), lr.begin()));
+    ASSERT(equal(fl.begin(), fl.end(), flr.begin()));
 }
 
 void TestIntexOf()
 {
-    vector<int> v{1, 2, 2, 3, 4, 3, 3, 5, 5};
+    vector<int> v{1, 2, 2, 4, 5, 5};
     list<int> l{1, 2, 2, 3, 4, 3, 3, 5, 5};
     forward_list<int> fl{1, 2, 2, 3, 4, 3, 3, 5, 5};
 
-    ASSERT_EQUAL(IndexOf(v, 3), 3);
+    ASSERT_EQUAL(IndexOf(v, 3), 6);
     ASSERT_EQUAL(IndexOf(l, 3), 3);
     ASSERT_EQUAL(IndexOf(fl, 3), 3);
 
@@ -419,11 +483,11 @@ void TestIntexOf()
 }
 void TestIntexOfPred()
 {
-    vector<int> v{1, 2, 2, 3, 4, 3, 3, 5, 5};
+    vector<int> v{1, 2, 2, 4, 5, 5};
     list<int> l{1, 2, 2, 3, 4, 3, 3, 5, 5};
     forward_list<int> fl{1, 2, 2, 3, 4, 3, 3, 5, 5};
 
-    ASSERT_EQUAL(IndexOfIf(v, [](const auto &a) { return a == 3; }), 3);
+    ASSERT_EQUAL(IndexOfIf(v, [](const auto &a) { return a == 3; }), 6);
     ASSERT_EQUAL(IndexOfIf(l, [](const auto &a) { return a == 3; }), 3);
     ASSERT_EQUAL(IndexOfIf(fl, [](const auto &a) { return a == 3; }), 3);
 
@@ -456,6 +520,9 @@ int main() {
     RUN_TEST(tr, TestMaxElementComp);
     RUN_TEST(tr, TestMinElementComp);
 
+    RUN_TEST(tr, TestSort);
+    RUN_TEST(tr, TestSortComp);
+    RUN_TEST(tr, TestForEach);
     RUN_TEST(tr, TestUnique);
     RUN_TEST(tr, TestUniqueIf);
 

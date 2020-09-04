@@ -9,52 +9,70 @@ static void matchToMap(std::map<std::string, std::string>& m,
         m["variable"] = match[4];
 }
 
-static void checkInt(std::string x, std::string s) {
+static bool checkInt(std::string x, std::string s, int& n) {
     size_t ind;
     try {
-        int res = std::stoi(std::string(x), &ind);
-        // if (x[ind] != '\0')
-        //     throw false;
+        n = std::stoi(x, &ind);
+        return true;
     }
     catch (...) {
         std::cerr << s << " is out of range\n";
+        return false;
     }
 }
 
-static void check(std::map<std::string, std::string>& m) {
-    static std::map<char, int> var;
-
-    std::regex r("[?+|?-]\\d+");
+static bool check_item(const std::map<std::string, std::string>::iterator& it,
+                       int& n, const std::map<char, int>& var) {
+    std::regex r("([?+|?-]{0,1}\\d+)");
     std::smatch match;
 
-
     try {
-        std::map<std::string, std::string>::iterator it = m.begin();
-
-        if (it->second.size() == 1 && std::isalpha(it->second[0])){
-            // сверить с архивом
-        } else if (std::regex_match(it->second, match, r)) {
-            checkInt(it->second, it->first);
-        }
-        else
+        if (std::regex_match(it->second, match, r)) {
+            if (!checkInt(it->second, it->first, n))
+                return false;
+        } else if (it->second.size() == 1 && std::isalpha(it->second[0])) {
+            n = var.at(it->second[0]);
+        } else
             throw false;
+        return true;
     }
-    // catch(std::string x) {
-    //     std::cerr << "invalid " << x << '\n';
-    // }
     catch(...) {
-        std::cerr << "invalid ALL INVALID\n";
+        std::cerr << "invalid " << it->first << '\n';
+        return false;
     }
+}
+
+static bool calc_operation(const std::map<std::string, std::string>::iterator& it,
+                            int& n, const int& s) {
+    if (it->second == "+") {
+        n += s;
+    } else if (it->second == "-") {
+        n -= s;
+    } else if (it->second == "*") {
+        n *= s;
+    } else if (it->second == "/") {
+        if (s == 0) {
+            std::cerr << "division by zero\n";
+            return false;
+        }
+        n /= s;
+    }
+    return true;
 }
 
 void calc(const std::smatch& match) {
 
-
+    static std::map<char, int> var;
     std::map<std::string, std::string> map;
     matchToMap(map, match);
 
-    printMap(map);
-
-    check(map);
-
+    std::map<std::string, std::string>::iterator it = map.begin();
+    int n = 0, s = 0;
+    if (!check_item(it, n, var) || !check_item(++it, s, var)
+        || !calc_operation(++it, n, s)) {
+        return;
+    }
+    if (match.size() > 4)
+        var[(++it)->second[0]] = n;
+    std::cout << n << '\n';
 }

@@ -7,5 +7,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 project(utilslib LANGUAGES CXX)
 
+include_directories(utils app/)
+
 add_subdirectory(utils)
 add_subdirectory(app)

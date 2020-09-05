@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.16.3)
+cmake_minimum_required(VERSION 3.1)
 
 project(utils LANGUAGES CXX)
 add_library(utils INTERFACE)

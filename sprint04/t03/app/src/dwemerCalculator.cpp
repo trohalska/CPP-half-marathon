@@ -22,16 +22,17 @@ static bool checkInt(std::string x, std::string s, int& n) {
 }
 
 static bool check_item(const std::map<std::string, std::string>::iterator& it,
-                       int& n, const std::map<char, int>& var) {
+                       int& n, const std::map<std::string, int>& var) {
     std::regex r("([?+|?-]{0,1}\\d+)");
+    std::regex rw("([a-zA-Z]+)");
     std::smatch match;
 
     try {
         if (std::regex_match(it->second, match, r)) {
             if (!checkInt(it->second, it->first, n))
                 return false;
-        } else if (it->second.size() == 1 && std::isalpha(it->second[0])) {
-            n = var.at(it->second[0]);
+        } else if (std::regex_match(it->second, match, rw)) {
+            n = var.at(it->second);
         } else
             throw false;
         return true;
@@ -62,7 +63,7 @@ static bool calc_operation(const std::map<std::string, std::string>::iterator& i
 
 void calc(const std::smatch& match) {
 
-    static std::map<char, int> var;
+    static std::map<std::string, int> var;
     std::map<std::string, std::string> map;
     matchToMap(map, match);
 
@@ -73,6 +74,6 @@ void calc(const std::smatch& match) {
         return;
     }
     if (match.size() > 4)
-        var[(++it)->second[0]] = n;
+        var[(++it)->second] = n;
     std::cout << n << '\n';
 }

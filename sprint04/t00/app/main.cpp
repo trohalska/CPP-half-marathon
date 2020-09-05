@@ -9,9 +9,10 @@
 #include <set>
 #include <string>
 #include <vector>
-#include "../utils/algorithmUtils.h"
+#include "algorithmUtils.h"
 
 using namespace std;
+using namespace Utils;
 
 template <class T>
 ostream &operator<<(ostream &os, const vector<T> &s) {
@@ -380,11 +381,6 @@ void TestSort()
     Sort(v);
     Sort(l);
     Sort(fl);
-
-    // for (auto x : v)
-    //     std::cout << x << ' ';
-    // std::cout << '\n';
-
 
     ASSERT(equal(v.begin(), v.end(), vr.begin()));
     ASSERT(equal(l.begin(), l.end(), lr.begin()));

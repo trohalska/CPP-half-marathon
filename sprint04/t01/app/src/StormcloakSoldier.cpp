@@ -21,5 +21,9 @@ void StormcloakSoldier::attack(ImperialSoldier &enemy) {
     enemy.consumeDamage(m_weapon->getDamage());
     std::cout
     << "Stormcloak soldier attacks and deals "<< m_weapon->getDamage() << " damage\n"
-    << "Imperial soldier consumes " << m_weapon->getDamage() << " of damage\n";
+    << "Imperial soldier consumes " << m_weapon->getDamage() << " of damage";
+    if (enemy.getHealth() <= 0)
+        std::cout << " and dies\n";
+    else
+        std::cout << "\n";
 }

@@ -26,10 +26,12 @@ static void initSoldiers(ImperialSoldier& is, StormcloakSoldier& ss, char *argv[
     ss.setWeapon(axe);
 }
 static void fight(ImperialSoldier &is, StormcloakSoldier &ss) {
-    while (ss.getHealth() > 0 && is.getHealth() > 0) {
-        is.attack(ss);
-        ss.attack(is);
-        std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>\n";
+    while (is.getHealth() > 0 && ss.getHealth() > 0) {
+        if (is.getHealth() > 0)
+            is.attack(ss);
+        if (ss.getHealth() > 0)
+            ss.attack(is);
+        std::cout << "<<<<<<<<<<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>>>>>>>>>>" << std::endl;
     }
 }
 static void whoIsWon(ImperialSoldier &is, StormcloakSoldier &ss) {

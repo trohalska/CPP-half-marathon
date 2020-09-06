@@ -38,7 +38,7 @@ static void whoIsWon(ImperialSoldier &is, StormcloakSoldier &ss) {
     if (is.getHealth() > 0)
         std::cout << "Imperial has won!\n";
     else
-        std::cout << "Stormcloack has won!\n";
+        std::cout << "Stormcloak has won!\n";
 }
 
 int main(int argc, char *argv[]) {

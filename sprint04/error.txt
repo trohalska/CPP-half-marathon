@@ -1,0 +1,129 @@
+----------------------------------------
+Checking gitlab.ucode.world:/unit-factory-kyiv/cpp-sprint04/trohalska.git
+----------------------------------------
+Running tests for t00 for User
+In file included from /var/folders/15/tg79dshj5ndbbpmnj680qbfr0000gp/T/tmpm7malsjh/user_repo/t00/app/main.cpp:9:
+/var/folders/15/tg79dshj5ndbbpmnj680qbfr0000gp/T/tmpm7malsjh/user_repo/t00/utils/./algorithmUtils.h:112:24: error: invalid operands to binary expression ('Weapon' and 'Weapon')
+                if (*j < *min)
+                    ~~ ^ ~~~~
+/var/folders/15/tg79dshj5ndbbpmnj680qbfr0000gp/T/tmpm7malsjh/user_repo/t00/utils/./algorithmUtils.h:141:9: note: in instantiation of function template specialization 'Utils::Sort<std::__1::vector<Weapon, std::__1::allocator<Weapon> > >' requested here
+        Sort(c);
+        ^
+/var/folders/15/tg79dshj5ndbbpmnj680qbfr0000gp/T/tmpm7malsjh/user_repo/t00/app/main.cpp:176:20: note: in instantiation of function template specialization 'Utils::Unique<std::__1::vector<Weapon, std::__1::allocator<Weapon> >, (lambda at /var/folders/15/tg79dshj5ndbbpmnj680qbfr0000gp/T/tmpm7malsjh/user_repo/t00/app/main.cpp:176:34)>' requested here
+            Utils::Unique(unVec, [](Weapon lhs, Weapon rhs) { return lhs.strength == rhs.strength; });
+                   ^
+1 error generated.
+make[2]: *** [app/CMakeFiles/testAlgoLib.dir/main.cpp.o] Error 1
+make[1]: *** [app/CMakeFiles/testAlgoLib.dir/all] Error 2
+make: *** [all] Error 2
+
+----------------------------------------
+Compiling User files for t01
+User files successfully compiled!
+Running tests for t01 for User
+Compiling Test files for t01
+Test files successfully compiled!
+Running tests for t01 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------  // fixed
+Comparing outputs
+Test case 3 Failed
+
+user output vs test output
+26c26
+< Stormcloack has won!
+---
+> Stormcloak has won!
+
+You lost 35 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 4 Ok
+You get 35 points
+----------------------------------------
+Total 65 points for t01 [ FAIL ]
+----------------------------------------
+----------------------------------------
+Compiling User files for t02
+User files successfully compiled!
+Running tests for t02 for User
+Compiling Test files for t02
+Test files successfully compiled!
+Running tests for t02 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 5 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Ok
+You get 5 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Ok
+You get 8 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 3 Ok
+You get 7 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 4 Ok
+You get 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 5 Ok
+You get 25 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 6 Ok
+You get 25 points
+----------------------------------------
+Total 100 points for t02 [ SUCCESS ]
+----------------------------------------
+----------------------------------------
+Running tests for t03 for User
+Running tests for t03 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 10 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 1 Ok
+You get 20 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 2 Ok
+You get 30 points
+----------------------------------------
+----------------------------------------
+Comparing outputs
+Test case 3 Ok
+You get 40 points
+----------------------------------------
+Total 100 points for t03 [ SUCCESS ]
+----------------------------------------

@@ -4,6 +4,8 @@
 #include "../utils/algorithmUtils.h"
 
 #include <vector>
+#include <list>
+#include <forward_list>
 
 using namespace Utils;
 
@@ -45,13 +47,21 @@ int main() {
     // Sort(i, [](int x, int y){ return x > y; });
     // printVector(i);
 
+    std::vector<int> v{5, 3, 1, 4, 2};
+    // std::list<int> l{5, 3, 1, 4, 2};
+    // std::forward_list<int> fl{5, 3, 1, 4, 2};
+
+    Sort(v);
+    // Sort(l);
+    // Sort(fl);
+
     // Unique(i);
     // printVector(i);
     // Unique(i, [](int x, int y){ return x == y; });
     // printVector(i);
     // ForEach(i, [](int x){ std::cout << x << " -*- "; });
 
-    std::cout << IndexOf(i, 9) << " " << IndexOfIf(i, [](int x){ return x == 4; }) << '\n';
+    // std::cout << IndexOf(i, 9) << " " << IndexOfIf(i, [](int x){ return x == 4; }) << '\n';
 
     return 0;
 }

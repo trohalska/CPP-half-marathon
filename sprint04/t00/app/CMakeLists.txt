@@ -8,7 +8,7 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/..")
 
 project(main LANGUAGES CXX)
 
-add_executable(${PROJECT_NAME} main1.cpp)
+add_executable(${PROJECT_NAME} main.cpp)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC utils)
 target_include_directories(	${PROJECT_NAME} PUBLIC

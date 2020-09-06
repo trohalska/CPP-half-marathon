@@ -8,6 +8,8 @@ void Dragonborn::executeAction(const Actions action) {
     hashtable[Actions::Weapon] = &Dragonborn::attackWithWeapon;
 
     std::invoke(hashtable[action], this);
+
+    // (this->*hashtable.at(action))();
 }
 void Dragonborn::shoutThuum() const {
     std::cout << "Yol Toor Shul\n";

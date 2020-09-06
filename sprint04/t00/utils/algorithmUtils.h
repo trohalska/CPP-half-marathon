@@ -29,6 +29,7 @@ namespace Utils
     // Modify(v, 22)
     template <class T, class U = T>
     bool Modify(T& obj, U&& new_value) {
+        // return (obj != new_value) ? obj = std::forward<T>(new_value) : false;
         if (obj == new_value) {
             return false;
         } else {
@@ -105,11 +106,12 @@ namespace Utils
 
     template <class Collection>
     void Sort(Collection& c) {
+        // std::sort(c.begin(), c.end());
         typename Collection::iterator min;
         for (typename Collection::iterator i = c.begin(); i != c.end(); ++i) {
             min = i;
             for (typename Collection::iterator j = i; j != c.end(); ++j)
-                if (*j < *min)
+                if (*min > *j)
                     min = j;
             iter_swap(min, i);
         }
@@ -118,6 +120,7 @@ namespace Utils
     // Sort(i, [](int x, int y){ return x < y; });
     template <class Collection, class Comp>
     void Sort(Collection& c, Comp&& comparator) {
+        // std::sort(c.begin(), c.end(), comparator);
         typename Collection::iterator min;
         for (typename Collection::iterator i = c.begin(); i != c.end(); ++i) {
             min = i;

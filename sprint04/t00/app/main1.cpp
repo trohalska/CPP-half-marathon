@@ -5,6 +5,8 @@
 
 #include <vector>
 
+using namespace Utils;
+
 int main() {
     std::vector<int> i = {1,5,8,9,1,1,1,4,5,2};
 

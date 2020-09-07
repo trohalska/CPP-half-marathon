@@ -1,4 +1,4 @@
-#include "draugr.h"
+#include "Draugr.h"
 
 Draugr::Draugr()
     :Draugr(100, 50)

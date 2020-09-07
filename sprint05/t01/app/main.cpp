@@ -1,4 +1,5 @@
-#include "src/draugr.h"
+#include "src/Draugr.h"
+// #include "Draugr.h"
 
 static int getShoutNumber(std::string s) {
     std::regex r(R"lit(\s*([0-8])\s*)lit");

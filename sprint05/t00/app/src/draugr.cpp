@@ -1,4 +1,4 @@
-#include "draugr.h"
+#include "Draugr.h"
 
 Draugr::Draugr() : m_health(100), m_frostResist(50) {};
 

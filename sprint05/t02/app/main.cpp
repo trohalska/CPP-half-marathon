@@ -1,4 +1,5 @@
-#include "src/draugr.h"
+#include "src/Draugr.h"
+// #include "Draugr.h"
 
 static int getShoutNumber(std::string s) {
     std::regex r(R"lit(\s*([0-8])\s*)lit");
@@ -15,7 +16,7 @@ static int getShoutNumber(std::string s) {
 }
 
 static std::smatch getNames(std::string s) {
-    std::regex r(R"lit(\s*([a-zA-Z]+)\s*,\s*([a-zA-Z]+)\s*)lit");
+    std::regex r(R"lit((.+),(.+))lit");
     std::smatch match;
 
     try {
@@ -39,7 +40,7 @@ int main(int argc, char *argv[]) {
 
     try {
         if (argc == 4) {
-            Draugr draugr(std::stod(argv[3]));
+            Draugr draugr(std::stod(argv[3])); // third constructor
             draugr.setName(names[1]);
             draugr.shoutPhrase(shoutNum);
 

@@ -6,8 +6,8 @@
 class Draugr {
 public:
     Draugr();
-    Draugr(int _m_frostResist);
-    Draugr(double _health, int _frostResist = 50);
+    explicit Draugr(int _m_frostResist);
+    explicit Draugr(double _health, int _frostResist = 50);
 
     void shoutPhrase(int shoutNumber) const;
 

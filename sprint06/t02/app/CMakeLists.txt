@@ -10,14 +10,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -Wall -Wextra -Werror -Wpedantic -
 option(USE_SRC "use src" ON)
 
 if(USE_SRC)
-  add_subdirectory(src/Creatures)
-  add_subdirectory(src/Spells)
-  #list(APPEND EXTRA_LIBS creatures spells)
+  add_subdirectory(src)
+  list(APPEND EXTRA_LIBS spells)
 endif()
 
 add_executable(${PROJECT_NAME} main.cpp)
 
-target_link_libraries(${PROJECT_NAME} PUBLIC creatures spells)
+target_link_libraries(${PROJECT_NAME} PUBLIC ${EXTRA_LIBS})
 target_include_directories(	${PROJECT_NAME} PUBLIC
 							"${PROJECT_BINARY_DIR}"
 							)

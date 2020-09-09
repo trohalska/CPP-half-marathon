@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Creature.h"
-#include "Spells/ISpell.h"
 
 static std::string getSpellName(Spells::SpellType type) {
     if (type == Spells::SpellType::Healing)
@@ -51,7 +50,7 @@ void Creature::castSpell(const Spells::SpellType type, Creature &creature) {
         std::cout << m_name << " doesn't know the "
                   << getSpellName(type) << " spell." << std::endl;
     else if (spell->cast(*this, creature))
-        std::cout << m_name << "> has cast the "
+        std::cout << m_name << " has cast the "
                   << getSpellName(type) << " spell on " << creature.getName()
                   << "!" << std::endl;
     else

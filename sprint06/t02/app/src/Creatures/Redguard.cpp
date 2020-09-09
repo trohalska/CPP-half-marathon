@@ -7,7 +7,7 @@ Redguard::Redguard(const std::string& name)
 {}
 
 void Redguard::sayPhrase() const {
-    std::cout << "I am " << getName() << ", from Redguards, wanna trade?" << std::endl;
+    std::cout << "I am " << getName() << " from Redguards, wanna trade?" << std::endl;
 }
 
 };  // end namespace Creatures

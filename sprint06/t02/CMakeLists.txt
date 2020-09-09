@@ -5,6 +5,6 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 project(magicSpells LANGUAGES CXX)
 
-include_directories(app/src/)
+include_directories(app/src/Creatures app/src/Spells)
 
 add_subdirectory(app)

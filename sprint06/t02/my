@@ -1,0 +1,34 @@
+JoJo was born!$
+I am JoJo from Redguards, wanna trade?$
+Dio was born!$
+I am Dio, Imperial soldier! Stop right here!$
+ - JoJo : 100 HP, 100 MP.$
+ - Dio : 100 HP, 100 MP.$
+JoJo has learned the healing spell successfully!$
+JoJo has learned the fireball spell successfully!$
+Dio has learned the equilibrium spell successfully!$
+Dio already knows the equilibrium spell!$
+JoJo has cast the fireball spell on Dio!$
+ - JoJo : 100 HP, 50 MP.$
+ - Dio : 60 HP, 100 MP.$
+Dio has cast the equilibrium spell on JoJo!$
+ - JoJo : 100 HP, 75 MP.$
+ - Dio : 35 HP, 100 MP.$
+Dio doesn't know the flames spell.$
+Dio has learned the flames spell successfully!$
+Dio has learned the freeze spell successfully!$
+JoJo has cast the healing spell on JoJo!$
+ - JoJo : 100 HP, 60 MP.$
+ - Dio : 35 HP, 100 MP.$
+Dio has cast the freeze spell on JoJo!$
+ - JoJo : 80 HP, 60 MP.$
+ - Dio : 35 HP, 70 MP.$
+JoJo has cast the fireball spell on Dio!$
+ - JoJo : 80 HP, 10 MP.$
+ - Dio : 0 HP, 70 MP.$
+JoJo can't cast the fireball!$
+ - JoJo : 80 HP, 10 MP.$
+ - Dio : 0 HP, 70 MP.$
+JoJo can't cast the fireball!$
+ - JoJo : 80 HP, 10 MP.$
+ - Dio : 0 HP, 70 MP.$

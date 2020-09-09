@@ -10,9 +10,8 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pipe -Wall -Wextra -Werror -Wpedantic -
 option(USE_SRC "use src" ON)
 
 if(USE_SRC)
-  add_subdirectory(src/Food)
-  add_subdirectory(src/Wizard)
-  list(APPEND EXTRA_LIBS food wizard)
+  add_subdirectory(src)
+  list(APPEND EXTRA_LIBS lib)
 endif()
 
 add_executable(${PROJECT_NAME} main.cpp)

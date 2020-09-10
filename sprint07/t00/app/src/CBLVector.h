@@ -61,7 +61,6 @@ private:
 
 } // end namespace CBL
 
-
 namespace CBL {
 
 template<class T>

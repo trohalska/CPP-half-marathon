@@ -104,15 +104,19 @@ CBL::BasicString<T> operator+(const CBL::BasicString<T>& lhs, const T rhs) {
 
 template <class T>
 bool operator==(const CBL::BasicString<T>& lhs, const CBL::BasicString<T>& rhs) {
-    return !lhs.compare(rhs);
+    return std::lexicographical_compare(lhs.begin(), lhs.end(),
+                                        rhs.begin(), rhs.end(),
+                [] (const T& a, const T& b) { return a == b;});
 }
 template <class T>
 bool operator==(const T* lhs, const CBL::BasicString<T>& rhs) {
-    return !rhs.compare(lhs);
+    // return CBL::BasicString<T>(lhs) == rhs;
+    return operator==(CBL::BasicString<T>(lhs), rhs);
 }
 template <class T>
 bool operator==(const CBL::BasicString<T>& lhs, const T* rhs) {
-    return !lhs.compare(rhs);
+    // return lhs == CBL::BasicString<T>(rhs);
+    return operator==(lhs, CBL::BasicString<T>(rhs));
 }
 
 template <class T>
@@ -135,13 +139,13 @@ bool operator<(const CBL::BasicString<T>& lhs, const CBL::BasicString<T>& rhs) {
 }
 template <class T>
 bool operator<(const T* lhs, const CBL::BasicString<T>& rhs) {
-    return std::lexicographical_compare(lhs, lhs + td::char_traits<T>::length(lhs),
+    return std::lexicographical_compare(lhs, lhs + std::char_traits<T>::length(lhs),
                                         rhs.begin(), rhs.end());
 }
 template <class T>
 bool operator<(const CBL::BasicString<T>& lhs, const T* rhs) {
     return std::lexicographical_compare(lhs.begin(), lhs.end(),
-                                        rhs, rhs + td::char_traits<T>::length(rhs));
+                                        rhs, rhs + std::char_traits<T>::length(rhs));
 }
 
 template <class T>

@@ -6,7 +6,7 @@ namespace CBL {
 
 template <class T>
 BasicString<T>::BasicString()
-    : m_size(0), m_buffer(new T[0])
+    : m_size(0), m_buffer(new T[1])
 {
     m_buffer[0] = '\0';
 }
@@ -191,6 +191,7 @@ void BasicString<T>::append(iterator first, iterator last) {
 template <class T>
 void BasicString<T>::swap(BasicString<T>& str) {
     std::swap(m_buffer, str.m_buffer);
+    std::swap(m_size, str.m_size);
 }
 
 // string operations
@@ -201,12 +202,21 @@ const T* BasicString<T>::c_str() const {
 
 template <class T>
 int BasicString<T>::compare(const BasicString<T>& str) const {
-    return std::char_traits<T>::compare(m_buffer, str.m_buffer, m_size);
+    size_t left = m_size;
+    size_t right = str.m_size;
+    int result = std::char_traits<T>::compare(m_buffer, str.m_buffer,
+                                            std::min(left, right));
+    if (result != 0)
+        return result;
+    if (left < right)
+        return -1;
+    else if (left > right)
+        return 1;
+    return 0;
 }
-
 template <class T>
 int BasicString<T>::compare(const T* str) const {
-    return std::char_traits<T>::compare(m_buffer, str, m_size);
+    return compare(BasicString<T>(str));
 }
 
 }; // end namespace CBL

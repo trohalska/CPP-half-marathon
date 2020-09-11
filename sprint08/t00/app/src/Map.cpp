@@ -19,11 +19,11 @@ size_t Map::height() const {
 void Map::outputMap() const {
     for (size_t i = 0; i <= m_width * m_height - 1; ++i) {
 
-        if (m_player->posX() + m_player->posY() * height() == i)
+        if (m_player->posX() + m_player->posY() * width() == i)
             std::cout << m_player->getIdentifier();
         else
             std::cout << m_map[i];
-        if ((i + 1) % m_height == 0)
+        if ((i + 1) % m_width == 0)
             std::cout << '\n';
         else
             std::cout << ' ';

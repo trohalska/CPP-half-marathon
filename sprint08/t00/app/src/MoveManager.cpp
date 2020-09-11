@@ -35,7 +35,7 @@ void MoveManager::processInputAndMove(const std::string &inputStr) {
 
 bool MoveManager::checkMove(MoveManager::Direction dir) const {
     if (dir == MoveManager::Direction::Up) {
-        if (m_player->posY() != 0 && m_player->posY() - 1 > 0)
+        if (m_player->posY() != 0)
             return true;
     }
     else if (dir == MoveManager::Direction::Down) {
@@ -43,7 +43,7 @@ bool MoveManager::checkMove(MoveManager::Direction dir) const {
             return true;
     }
     else if (dir == MoveManager::Direction::Left) {
-        if (m_player->posX() != 0 && m_player->posX() - 1 >= 0)
+        if (m_player->posX() != 0)
             return true;
     }
     else if (dir == MoveManager::Direction::Right) {

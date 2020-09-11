@@ -1,0 +1,32 @@
+----------------------------------------
+Checking gitlab.ucode.world:/unit-factory-kyiv/cpp-sprint06/trohalska.git
+----------------------------------------
+Running tests for t00 for User
+Running tests for t00 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 100 points
+----------------------------------------
+Total 100 points for t00 [ SUCCESS ]
+----------------------------------------
+----------------------------------------
+Running tests for t01 for User
+Running tests for t01 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 100 points
+----------------------------------------
+Total 100 points for t01 [ SUCCESS ]
+----------------------------------------
+----------------------------------------
+Running tests for t02 for User
+Running tests for t02 for Test
+----------------------------------------
+Comparing outputs
+Test case 0 Ok
+You get 100 points
+----------------------------------------
+Total 100 points for t02 [ SUCCESS ]
+----------------------------------------

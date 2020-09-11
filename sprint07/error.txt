@@ -1,0 +1,237 @@
+----------------------------------------
+Checking gitlab.ucode.world:/unit-factory-kyiv/cpp-sprint07/trohalska.git
+----------------------------------------
+Running tests for t00 for User
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:5:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:53:26: error: use of undeclared identifier 'begin'
+        return std::find(begin(c), end(c), value);
+                         ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:98:26: note: in instantiation of function template specialization 'Utils::Find<CBL::Vector<int>, int>' requested here
+        auto it = Utils::Find(vecOfInts, 3);
+                         ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:101:49: error: no matching function for call to 'Find'
+    std::cout << caseCount++ << ": (Find) " << (Utils::Find(vecOfInts, 10) == vecOfInts.end()) << std::endl;
+                                                ^~~~~~~~~~~
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:52:10: note: candidate template ignored: substitution failure [with Collection = CBL::Vector<int>, T = int]
+    auto Find(Collection& c, const T& value) {
+         ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:58:29: error: use of undeclared identifier 'begin'
+        return std::find_if(begin(c), end(c), std::forward<Pred>(predicate));
+                            ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:106:26: note: in instantiation of function template specialization 'Utils::FindIf<CBL::Vector<Drums>, (lambda at /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:106:45)>' requested here
+        auto it = Utils::FindIf(vecOfDrums, [](Drums drum) { return drum.tss == 0.3; });
+                         ^
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:5:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:58:29: error: use of undeclared identifier 'begin'
+        return std::find_if(begin(c), end(c), std::forward<Pred>(predicate));
+                            ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:111:13: note: in instantiation of function template specialization 'Utils::FindIf<CBL::Vector<Drums>, (lambda at /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:111:32)>' requested here
+    (Utils::FindIf(vecOfDrums, [](Drums drum) { return drum.tss == 3.14; }) == vecOfDrums.end()) << std::endl;
+            ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:116:54: error: no matching function for call to 'Find'
+    std::cout << caseCount++ << ": (RemoveAll) " << (Utils::Find(remAll, 3) == remAll.end()) << std::endl;
+                                                     ^~~~~~~~~~~
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:52:10: note: candidate template ignored: substitution failure [with Collection = CBL::Vector<int>, T = int]
+    auto Find(Collection& c, const T& value) {
+         ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:58:29: error: use of undeclared identifier 'begin'
+        return std::find_if(begin(c), end(c), std::forward<Pred>(predicate));
+                            ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:122:13: note: in instantiation of function template specialization 'Utils::FindIf<CBL::Vector<Drums>, (lambda at /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:122:30)>' requested here
+    (Utils::FindIf(remAllIf, [](Drums drum) { return drum.badum == 9000; }) == remAllIf.end()) << std::endl;
+            ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:171:104: error: comparison of integers of different signs: 'int' and 'size_t' (aka 'unsigned long') [-Werror,-Wsign-compare]
+    (Utils::CountIf(lstForEach, [](std::string str) { return str.find("_lol") != std::string::npos; }) ==
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ^
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:5:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:67:29: error: use of undeclared identifier 'begin'
+        return std::find_if(begin(c), end(c), std::forward<Pred>(predicate)) != c.end();
+                            ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:130:13: note: in instantiation of function template specialization 'Utils::ContainsIf<CBL::Vector<Drums>, (lambda at /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:130:36)>' requested here
+    (Utils::ContainsIf(vecOfDrums, [](Drums drum) { return drum.badum == 100; })) << std::endl;
+            ^
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:5:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:67:29: error: use of undeclared identifier 'begin'
+        return std::find_if(begin(c), end(c), std::forward<Pred>(predicate)) != c.end();
+                            ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:132:14: note: in instantiation of function template specialization 'Utils::ContainsIf<CBL::Vector<Drums>, (lambda at /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:132:37)>' requested here
+    (!Utils::ContainsIf(vecOfDrums, [](Drums drum) { return drum.badum == 7; })) << std::endl;
+             ^
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:5:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:72:30: error: use of undeclared identifier 'begin'
+        return std::count_if(begin(c), end(c), std::forward<Pred>(predicate));
+                             ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:136:13: note: in instantiation of function template specialization 'Utils::CountIf<CBL::Vector<Drums>, (lambda at /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:136:33)>' requested here
+    (Utils::CountIf(vecOfDrums, [](Drums drum) { return drum.badum == 100; }) == 2) << std::endl;
+            ^
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:5:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:72:30: error: use of undeclared identifier 'begin'
+        return std::count_if(begin(c), end(c), std::forward<Pred>(predicate));
+                             ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:138:13: note: in instantiation of function template specialization 'Utils::CountIf<CBL::Vector<Drums>, (lambda at /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:138:33)>' requested here
+    (Utils::CountIf(vecOfDrums, [](Drums drum) { return drum.badum == 0; }) == 0) << std::endl;
+            ^
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:5:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:116:13: error: use of undeclared identifier 'iter_swap'
+            iter_swap(min, i);
+            ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:145:16: note: in instantiation of function template specialization 'Utils::Sort<CBL::Vector<int> >' requested here
+        Utils::Sort(unsorted);
+               ^
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:5:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:130:13: error: use of undeclared identifier 'iter_swap'
+            iter_swap(min, i);
+            ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:150:16: note: in instantiation of function template specialization 'Utils::Sort<CBL::Vector<int>, (lambda at /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:150:31)>' requested here
+        Utils::Sort(unsorted, [](int lhs, int rhs) { return lhs > rhs; });
+               ^
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:5:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:137:9: error: no matching function for call to 'Sort'
+        Sort(c);
+        ^~~~
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:158:16: note: in instantiation of function template specialization 'Utils::Unique<CBL::Vector<int> >' requested here
+        Utils::Unique(unVec);
+               ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:108:10: note: candidate template ignored: substitution failure [with Collection = CBL::Vector<int>]
+    void Sort(Collection& c) {
+         ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:122:10: note: candidate function template not viable: requires 2 arguments, but 1 was provided
+    void Sort(Collection& c, Comp&& comparator) {
+         ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:155:30: error: use of undeclared identifier 'begin'
+        return std::distance(begin(c),
+                             ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:175:59: note: in instantiation of function template specialization 'Utils::IndexOf<CBL::Vector<int>, int>' requested here
+    std::cout << caseCount++ << ": (IndexOf) " << (Utils::IndexOf(vecOfInts, 1) == 0) << std::endl;
+                                                          ^
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:5:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:155:30: error: use of undeclared identifier 'begin'
+        return std::distance(begin(c),
+                             ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:176:59: note: in instantiation of function template specialization 'Utils::IndexOf<CBL::Vector<float>, float>' requested here
+    std::cout << caseCount++ << ": (IndexOf) " << (Utils::IndexOf(vecOfFloats, 0.3f) == 2) << std::endl;
+                                                          ^
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:5:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:161:30: error: use of undeclared identifier 'begin'
+        return std::distance(begin(c),
+                             ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:180:13: note: in instantiation of function template specialization 'Utils::IndexOfIf<CBL::Vector<Drums>, (lambda at /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:180:35)>' requested here
+    (Utils::IndexOfIf(vecOfDrums, [](Drums drum) { return drum.badum == 10; }) == 0) << std::endl;
+            ^
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:5:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/utils/algorithmUtils.h:161:30: error: use of undeclared identifier 'begin'
+        return std::distance(begin(c),
+                             ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:182:13: note: in instantiation of function template specialization 'Utils::IndexOfIf<CBL::Vector<Drums>, (lambda at /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t00/app/main.cpp:182:35)>' requested here
+    (Utils::IndexOfIf(vecOfDrums, [](Drums drum) { return drum.badum == 9000; }) == 3) << std::endl;
+            ^
+18 errors generated.
+make[2]: *** [app/CMakeFiles/vector.dir/main.cpp.o] Error 1
+make[1]: *** [app/CMakeFiles/vector.dir/all] Error 2
+make: *** [all] Error 2
+
+----------------------------------------
+Running tests for t01 for User
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/main.cpp:14:17: error: no viable conversion from 'const char [14]' to 'CBL::String'
+    CBL::String str = "Hello Tamriel";
+                ^     ~~~~~~~~~~~~~~~
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:7:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char [14]' to 'const CBL::String &' for 1st argument
+class String : public BasicString<char> {
+      ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:7:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char [14]' to 'CBL::String &&' for 1st argument
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/main.cpp:33:17: error: no viable conversion from 'const char [6]' to 'CBL::String'
+    CBL::String str1 = "Hello";
+                ^      ~~~~~~~
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:7:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char [6]' to 'const CBL::String &' for 1st argument
+class String : public BasicString<char> {
+      ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:7:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char [6]' to 'CBL::String &&' for 1st argument
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/main.cpp:34:17: error: no viable conversion from 'const char [9]' to 'CBL::String'
+    CBL::String str2 = " Tamriel";
+                ^      ~~~~~~~~~~
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:7:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char [9]' to 'const CBL::String &' for 1st argument
+class String : public BasicString<char> {
+      ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:7:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char [9]' to 'CBL::String &&' for 1st argument
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/main.cpp:89:18: error: no viable conversion from 'const wchar_t [218]' to 'CBL::WString'
+    CBL::WString str =
+                 ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLWString.h:7:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const wchar_t [218]' to 'const CBL::WString &' for 1st argument
+class WString : public BasicString<wchar_t> {
+      ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLWString.h:7:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const wchar_t [218]' to 'CBL::WString &&' for 1st argument
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/main.cpp:114:17: error: no viable conversion from 'const char [12]' to 'CBL::String'
+    CBL::String str = "some string";
+                ^     ~~~~~~~~~~~~~
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:7:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char [12]' to 'const CBL::String &' for 1st argument
+class String : public BasicString<char> {
+      ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:7:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char [12]' to 'CBL::String &&' for 1st argument
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/main.cpp:135:17: error: no viable conversion from 'const char [4]' to 'CBL::String'
+    CBL::String str1 = "lol";
+                ^      ~~~~~
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:7:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char [4]' to 'const CBL::String &' for 1st argument
+class String : public BasicString<char> {
+      ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:7:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char [4]' to 'CBL::String &&' for 1st argument
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/main.cpp:136:17: error: no viable conversion from 'const char [4]' to 'CBL::String'
+    CBL::String str2 = "kek";
+                ^      ~~~~~
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:7:7: note: candidate constructor (the implicit copy constructor) not viable: no known conversion from 'const char [4]' to 'const CBL::String &' for 1st argument
+class String : public BasicString<char> {
+      ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:7:7: note: candidate constructor (the implicit move constructor) not viable: no known conversion from 'const char [4]' to 'CBL::String &&' for 1st argument
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/main.cpp:1:
+In file included from /private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLString.h:3:
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:101:9: error: no matching member function for call to 'append'
+    str.append(rhs);
+    ~~~~^~~~~~
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/main.cpp:128:29: note: in instantiation of function template specialization 'operator+<char>' requested here
+    str += CBL::String("7") + '8';
+                            ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:47:10: note: candidate function not viable: no known conversion from 'const char' to 'const char *' for 1st argument; take the address of the argument with &
+    void append(const T* str);
+         ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:46:10: note: candidate function not viable: no known conversion from 'const char' to 'const BasicString<char>' for 1st argument
+    void append(const BasicString<T>& str);
+         ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:48:10: note: candidate function not viable: requires 2 arguments, but 1 was provided
+    void append(const T* str, size_t n);
+         ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:49:10: note: candidate function not viable: requires 2 arguments, but 1 was provided
+    void append(size_t n, T c);
+         ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:50:10: note: candidate function not viable: requires 2 arguments, but 1 was provided
+    void append(iterator first, iterator last);
+         ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:93:25: error: no matching constructor for initialization of 'CBL::BasicString<char>'
+    CBL::BasicString<T> str(lhs);
+                        ^   ~~~
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/main.cpp:129:16: note: in instantiation of function template specialization 'operator+<char>' requested here
+    str += '9' + CBL::String("0");
+               ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:18:14: note: candidate constructor not viable: no known conversion from 'const char' to 'const char *' for 1st argument; take the address of the argument with &
+    explicit BasicString(const T* str);
+             ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:16:5: note: candidate constructor not viable: no known conversion from 'const char' to 'const BasicString<char>' for 1st argument
+    BasicString(const BasicString<T>& str);
+    ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:15:5: note: candidate constructor not viable: requires 0 arguments, but 1 was provided
+    BasicString();
+    ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:19:5: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+    BasicString(const T* str, size_t n);
+    ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:20:5: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+    BasicString(size_t n, T c);
+    ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:21:5: note: candidate constructor not viable: requires 2 arguments, but 1 was provided
+    BasicString(iterator first, iterator last);
+    ^
+/private/var/folders/52/5hb4pdzj7vx9tpmp07s757300000gp/T/tmp2itmw6aw/user_repo/t01/app/src/CBLBasicString.h:17:5: note: candidate constructor not viable: requires at least 2 arguments, but 1 was provided
+    BasicString(const BasicString<T>& str, size_t pos, size_t len = npos);
+    ^
+9 errors generated.
+make[2]: *** [app/CMakeFiles/basicString.dir/main.cpp.o] Error 1
+make[1]: *** [app/CMakeFiles/basicString.dir/all] Error 2
+make: *** [all] Error 2

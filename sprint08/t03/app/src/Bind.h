@@ -35,7 +35,8 @@ namespace SpecializedFunctions {
         template <typename T>
         auto outputWeird3Arguments = std::bind(output3Arguments<T>, std::placeholders::_2, std::placeholders::_3, std::placeholders::_1);
         auto outputFusRoDah = std::bind(output3Arguments<std::string>, "Fus", "Ro", "Dah");
-        auto outputLovelyWords = std::bind(outputPrintWords<std::string>, "I", "Love", std::placeholders::_2, "!");
+        auto outputLovelyWords = std::bind(outputPrintWords<std::string>,
+                                "I", "love", std::placeholders::_2, "!");
 
     }  // end namespace Output
 }  // end namespace SpecializedFunctions
